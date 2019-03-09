@@ -5,7 +5,7 @@ public class CardGame implements Game{
 	  // Variable(s) used in the card game methods
   public static ArrayList<String> cardList;
   public static HashSet<String> cardsChosen=new HashSet<String>();
-
+  //Kept old structure, added some prompts, hid the cards available, replaced with number of cards remaining.
   public void playGame() throws Exception {
       // Play card game:
       System.out.println("You've chosen the card game.");
@@ -57,7 +57,7 @@ public class CardGame implements Game{
   public void mainGame() throws Exception {
       // The main game:
 
-      // Let user select two cards from the pack
+      // Let user draw three cards from the pack
       for (int i=0; i<3; i++) {
         System.out.println("Hit <RETURN> to draw a card");
         br.readLine();

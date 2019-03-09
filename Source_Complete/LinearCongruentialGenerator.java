@@ -27,21 +27,7 @@ public class LinearCongruentialGenerator implements RandomInterface {
   this(0);  seed=System.currentTimeMillis() % m;
 
   }
-
-  public static void main(String args[]) {
-  // Just a little bit of test code, to illustrate use of this class.
-    RandomInterface r=new LinearCongruentialGenerator();
-    for (int i=0; i<10; i++) System.out.println(r.next());
-
-  // Since RandomInterface doesn't know about the instance variables defined in this
-  // particular implementation, LinearCongruentialGenerator, we need to type-cast
-  // in order to print out the parameters (primarily for "debugging" purposes).
-
-    LinearCongruentialGenerator temp=(LinearCongruentialGenerator) r;
-    System.out.println("a: " + temp.a + "  c: " + temp.c + "  m: " + temp.m + "  seed: " + temp.seed);
-
-  }
-
+  //Override RandomInterface's function.
   public double next() {
     seed = (a * seed + c) % m;
     return (double) seed/m;
